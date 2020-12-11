@@ -1,10 +1,14 @@
 --Part 1
 
--- Id int
--- Name longtext
--- EmployerId int
+SELECT COLUMN_NAME, DATA_TYPE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'jobs';
 
 --Part 2
+
+SELECT Name
+FROM employers
+WHERE Location = 'St. Louis City';
 
 --Part 3
 
