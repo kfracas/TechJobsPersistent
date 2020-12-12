@@ -15,8 +15,9 @@ namespace TechJobsPersistent.ViewModels
         [Required(ErrorMessage = "Employer is required")]
         public int EmployerId { get; set; }
         public List<SelectListItem> Employers { get; set; }
+        public List<Skill> Skills { get; set; }
 
-        public AddJobViewModel(List<Employer> employers)
+        public AddJobViewModel(List<Employer> employers, List<Skill> skills)
         {
             Employers = new List<SelectListItem>();
 
@@ -30,6 +31,8 @@ namespace TechJobsPersistent.ViewModels
                     }
                     );
             }
+
+            Skills = skills;
         }
         public AddJobViewModel()
         {

@@ -23,5 +23,10 @@ namespace TechJobsPersistent.Models
         {
             Name = name;
         }
+
+        internal void Add(JobSkill jobskill)
+        {
+            JobSkills.Add(jobskill);
+        }
     }
 }

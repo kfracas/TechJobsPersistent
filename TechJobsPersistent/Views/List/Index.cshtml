@@ -3,14 +3,11 @@
     <h2 class="centered">View Jobs By Category</h2>
 </div>
 
-<table class="centeredTable">
+<table class="table">
     <tr>
         @foreach (var column in ViewBag.columns)
         {
-            @if (column.Key != "all")
-            {
-                <th>@column.Value</th>
-            }
+            <th>@column.Value</th>
         }
     </tr>
     <tr>
@@ -18,6 +15,13 @@
         {
             <td>
                 <ul>
+                    @if (category == "all")
+                    {
+                    <li>
+                        <a asp-controller="List" asp-action="Jobs" asp-route-column="@category" asp-route-value="">All</a>
+                    </li>
+                    } 
+                    
                     @if (category == "employer")
                     {
                         @foreach (var item in ViewBag.employers)
@@ -27,7 +31,7 @@
                             </li>
                         }
                     }
-                    else
+                    else if (category == "skill")
                     {
                         @foreach (var item in ViewBag.skills)
                         {
@@ -36,7 +40,6 @@
                             </li>
                         }
                     }
-
                 </ul>
             </td>
         }

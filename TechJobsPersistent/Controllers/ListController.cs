@@ -23,6 +23,7 @@ namespace TechJobsPersistent.Controllers
 
         internal static List<string> TableChoices = new List<string>()
         {
+            "all",
             "employer",
             "skill"
         };
